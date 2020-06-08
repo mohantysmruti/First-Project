@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Housing</title>
+</head>
+<body>
+    <section class="text-gray-500 body-font bg-gray-900">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-20">
+          <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">Rent rooms at a cheap price</h2>
+          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Housing</h1>
+          <p class="lg:w-2/3 mx-auto leading-relaxed text-base">If you are locked outside your room or your roommate forgot to give you room keys you can rent a room for timepass or full time stay</p>
+        </div>
+        <div class="flex flex-wrap">
+            {% for houss in hous1 %}
+          <div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-800">
+            <h2 class="text-lg sm:text-xl text-white font-medium title-font mb-2">{{houss.name}}</h2>
+            <p class="leading-relaxed text-base mb-4">{{houss.desc}}</p>
+            <a class="text-indigo-500 inline-flex items-center">{{houss.rent_price}}
+            </a>
+          </div>
+            {% endfor %}
+        </div>
+        <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Contact Us</button>
+      </div>
+    </section>
+</body>
+</html>
